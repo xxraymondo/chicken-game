@@ -1,0 +1,101 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Alegreya|Lobster|Baloo+Chettan+2|Caladea|Caveat|Dancing+Script|Anton|&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <div class="the-game">
+        <div id="score" class="float-left ml-3 mt-2">
+            <p>
+                Score 0
+            </p>
+        </div>
+        <div id="life" class="float-right mr-3 mt-2">
+            <p>
+                Life 10
+            </p>
+        </div>
+        <div class="container pt-3 ">
+
+            <audio id="sound">
+                <source src="happy chicken.mp3">
+                </audio>
+
+            <div class="row justify-content-between text-center">
+                <div class=" col-sm-3 colm ">
+                    <img class="hen" src="img/Happy_hen.svg">
+                    <img data-egg="1" id="eggL" class="egg" src="img/Happy_Egg.svg">
+                    <img class="chick" Id="chickL" src="img/Broken_Egg.svg">
+
+                </div>
+                <div class=" col-sm-3 colm">
+                    <img class="hen" src="img/Happy_hen.svg">
+                    <img data-egg="2" id="eggM" class="egg" src="img/Happy_Egg.svg">
+                    <img class="chick" Id="chickM" src="img/Broken_Egg.svg">
+                </div>
+                <div class="col-sm-3 colm">
+                    <img class="hen" src="img/Happy_hen.svg">
+                    <img data-egg="3" id="eggR" class="egg" src="img/Happy_Egg.svg">
+                    <img class="chick" id="chickR" src="img/Broken_Egg.svg">
+                </div>
+            </div>
+            <img id="basketJs" class="bascket" src="img/Basket.svg">
+            <div class="container ">
+                <div id="startMain" class="row justify-content-center align-items-center   h-50">
+                    <div class="col-md-6 ">
+
+                        <div class="start text-center d-flex flex-column justify-content-center align-items-center">
+                            <h1 class="text-center main-text text-light ">
+                                HAPPY EGGS
+
+                            </h1>
+                            <button id="startButton" class="btn start-button btn-light">
+                                start
+                            </button>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- <div class="container ">
+                <div id="end" class="row justify-content-center align-items-center   h-50">
+                    <div class="col-md-6 ">
+
+                        <div class="start text-center d-flex flex-column justify-content-center align-items-center">
+                            <h1 class="text-center main-text text-light ">
+                                HAPPY EGGS
+
+                            </h1>
+                            <button id="playAgain" class="btn start-button btn-light">
+                                start
+                            </button>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div> -->
+
+        </div>
+        <script src="first.js"></script>
+        <script src="js/jquery-3.4.1.slim.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+::selection {
+    background-color: #333333;
+    color: #c5c5c5;
+}
+
+
+/* .mo{
+    width: 20px;
+    height: 25px;
+    position: absolute;
+} */
+
+.the-game {
+    background-image: url(img/Background_Night.svg);
+    /* background-size: 100% 150%; */
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.hen {
+    width: 50%;
+    animation: henn 1s infinite linear;
+    position: relative;
+}
+
+@keyframes henn {
+    0%,
+    100% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+}
+
+.bascket {
+    width: 8%;
+    position: absolute;
+    bottom: 60px;
+}
+
+#eggM {
+    animation: MoveUpDown linear infinite;
+    animation-duration: 3s;
+}
+
+#eggL {
+    animation: MoveUpDown linear infinite;
+    animation-duration: 3s;
+}
+
+#eggR {
+    animation: MoveUpDown linear infinite;
+    animation-duration: 3s;
+}
+
+.egg {
+    position: absolute;
+    right: 118px;
+    top: 50px;
+    display: none;
+}
+
+@keyframes MoveUpDown {
+    0% {
+        top: 50px;
+    }
+    100% {
+        top: 490px;
+    }
+}
+
+.main {
+    width: 100%;
+    height: 50%;
+}
+
+.start {
+    background-color: #4C4660;
+    text-align: center;
+    border: 4px solid #FF4571;
+    border-radius: 100px;
+    height: 50%;
+    position: relative;
+}
+
+.textt {
+    height: 100%;
+}
+
+#chickM {
+    display: none;
+}
+
+#chickR {
+    display: none;
+}
+
+#chickL {
+    display: none;
+}
+
+.chick {
+    width: 50%;
+    position: absolute;
+    top: 450px;
+}
+
+.main-text {
+    font-size: 4.3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.start-button {
+    font-size: 1.8rem;
+    font-weight: 800;
+    top: 115px;
+    background-color: #FF4571;
+    border: 4px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    padding: 10px 50px;
+}
+
+#end {
+    font-size: 1.8rem;
+    font-weight: 800;
+    position: absolute;
+    top: 145px;
+    background-color: #FF4571;
+    border: 4px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    padding: 10px 50px;
+}
