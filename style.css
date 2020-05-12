@@ -131,6 +131,9 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
+#end{
+    display: flex;
+}
 
 .start-button {
     font-size: 1.8rem;

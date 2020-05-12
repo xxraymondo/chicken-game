@@ -24,20 +24,40 @@ var sound = document.getElementById("sound");
 var end = document.getElementById("end");
 var playAgain = document.getElementById("playAgain");
 
+function resetScoreNlife () {  
+
+    lifeCount=10
+    lifePoint = ` <p>
+    life ` + lifeCount + `
+</p>`;
+score=0
+    scorePint = ` <p>
+Score ` + score + `
+</p>`;
+    document.getElementById("score").innerHTML = scorePint;
+    
+    document.getElementById("life").innerHTML = lifePoint;
+   
+}
+function start(){
+    {
+            
+        eggM.style.display = "block";
+        eggR.style.display = "block";
+        eggL.style.display = "block";
+        startMain.style.display = "none";
+        eggM.style.animationDuration = "" + egg1 + "s";
+        eggR.style.animationDuration = "" + egg2 + "s";
+        eggL.style.animationDuration = "" + egg3 + "s";
+        resetScoreNlife()
+    }
+}
 
 function game() {
     
     for (var i = 0; i < egg.length; i++) {
         eggArr.push(egg[i]);
-        startButton.addEventListener("click", function() {
-            eggM.style.display = "block";
-            eggR.style.display = "block";
-            eggL.style.display = "block";
-            startMain.style.display = "none";
-            eggM.style.animationDuration = "" + egg1 + "s";
-            eggR.style.animationDuration = "" + egg2 + "s";
-            eggL.style.animationDuration = "" + egg3 + "s";
-        })
+        startButton.addEventListener("click", start )
     }
     var eggLtop;
     var theBacketPos;
@@ -46,10 +66,34 @@ function game() {
         theBacketPos = e.clientX;
     })
     let coun=0
-    setInterval(function() { //LEFT egg 
-        eggLtop = Math.floor(eggL.getBoundingClientRect().top);
+  
+    setInterval(function() { //right egg
+        eggRtop = Math.floor(eggR.getBoundingClientRect().top);
+        if (eggRtop >495) {
+            coun++
+           console.log(coun)
+            if (theBacketPos > 950 && theBacketPos < 1100) {
+                addScore()
+            } else {
+                minLife()
+                endGame()
+            }
+        }
+        
+        eggMtop = Math.floor(eggM.getBoundingClientRect().top);
+        if (eggMtop > 495) {
+           coun++
+           console.log(coun)
+            if (theBacketPos > 550 && theBacketPos < 700) {
+                addScore()
+            } else {
+                minLife()
+                endGame()
+            }
+        }
 
-        if (eggLtop == 500) {
+        eggLtop = Math.floor(eggL.getBoundingClientRect().top);
+        if (eggLtop > 495) {
             coun++
             console.log(coun)
             if (theBacketPos > 150 && theBacketPos < 250) {
@@ -59,53 +103,9 @@ function game() {
                  endGame()
             }
         }
-    },20 )
-    setInterval(function() { //right egg
-        eggRtop = Math.floor(eggR.getBoundingClientRect().top);
-       
-        if (eggRtop == 500) {
-            coun++
-            console.log(coun)
-            if (theBacketPos > 950 && theBacketPos < 1100) {
-           
-                addScore()
-            } else {
-                minLife()
-                endGame()
-            }
-        }
-    },20 )
-    setInterval(function() { //MIDDLE egg
-        eggMtop = Math.floor(eggM.getBoundingClientRect().top);
-        if (eggMtop == 500) {
-           coun++
-            console.log(coun)
-
-            if (theBacketPos > 550 && theBacketPos < 700) {
-                addScore()
-            } else {
-                minLife()
-                endGame()
-            }
-        }
-
-    },20)
-
-
-function endGame() {
-    if (lifeCount < 0) {
-        eggM.style.display = "none";
-        eggR.style.display = "none";
-        eggL.style.display = "none";
-        chickM.style.display = "none";
-        chickR.style.display = "none";
-        chickL.style.display = "none";
-        end.style.display = "flex";
-    }
-}
+    },100 )
 
 function addScore() {
-    console.log('yes')
     score++
     scorePint = ` <p>
 Score ` + score + `
@@ -113,9 +113,7 @@ Score ` + score + `
     document.getElementById("score").innerHTML = scorePint;
     chickM.style.display = "none";
 }
-
 function minLife() {
-    console.log('yes')
     lifeCount--
     lifePoint = ` <p>
     life ` + lifeCount + `
@@ -123,11 +121,19 @@ function minLife() {
     document.getElementById("life").innerHTML = lifePoint;
     chickM.style.display = "block";
 }
-// playAgain.addEventListener("click", function() {
-//     game()
-
-// })
 }
-
+function endGame() {
+    if (lifeCount <= 0) { 
+    
+        startMain.style.display="flex"
+        eggM.style.display = "none";
+        eggR.style.display = "none";
+        eggL.style.display = "none";
+        chickM.style.display = "none";
+        chickR.style.display = "none";
+        chickL.style.display = "none";
+    }
+    
+}
 
 game()
