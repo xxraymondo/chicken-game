@@ -13,9 +13,9 @@ var chick = document.getElementsByClassName("chick");
 var life = document.getElementById("life");
 var lifePoint = `10`;
 var lifeCount = 10;
-var egg1 = Math.round(Math.random() * 3) + 2;
-var egg2 = Math.round(Math.random() * 3) + 2;
-var egg3 = Math.round(Math.random() * 3) + 2;
+var egg1 = Math.round(Math.random() * 3) + 3;
+var egg2 = Math.round(Math.random() * 3) + 3;
+var egg3 = Math.round(Math.random() * 3) + 3;
 var basketPos = Math.floor(basketJs.getBoundingClientRect().left);
 var chickM = document.getElementById("chickM");
 var chickR = document.getElementById("chickR");
@@ -26,6 +26,7 @@ var playAgain = document.getElementById("playAgain");
 
 
 function game() {
+    
     for (var i = 0; i < egg.length; i++) {
         eggArr.push(egg[i]);
         startButton.addEventListener("click", function() {
@@ -44,31 +45,42 @@ function game() {
         basketJs.style.left = e.clientX;
         theBacketPos = e.clientX;
     })
-    setInterval(function() { //LEFT egg
+    let coun=0
+    setInterval(function() { //LEFT egg 
         eggLtop = Math.floor(eggL.getBoundingClientRect().top);
-        if (eggLtop == 505) {
+
+        if (eggLtop == 500) {
+            coun++
+            console.log(coun)
             if (theBacketPos > 150 && theBacketPos < 250) {
                 addScore()
             } else {
                 minLife()
-                endGame()
+                 endGame()
             }
         }
-    }, 100)
+    },20 )
     setInterval(function() { //right egg
         eggRtop = Math.floor(eggR.getBoundingClientRect().top);
-        if (eggRtop == 505) {
+       
+        if (eggRtop == 500) {
+            coun++
+            console.log(coun)
             if (theBacketPos > 950 && theBacketPos < 1100) {
+           
                 addScore()
             } else {
                 minLife()
                 endGame()
             }
         }
-    }, 100)
+    },20 )
     setInterval(function() { //MIDDLE egg
         eggMtop = Math.floor(eggM.getBoundingClientRect().top);
-        if (eggMtop == 505) {
+        if (eggMtop == 500) {
+           coun++
+            console.log(coun)
+
             if (theBacketPos > 550 && theBacketPos < 700) {
                 addScore()
             } else {
@@ -77,9 +89,8 @@ function game() {
             }
         }
 
-    }, 100)
-}
-game()
+    },20)
+
 
 function endGame() {
     if (lifeCount < 0) {
@@ -94,6 +105,7 @@ function endGame() {
 }
 
 function addScore() {
+    console.log('yes')
     score++
     scorePint = ` <p>
 Score ` + score + `
@@ -103,6 +115,7 @@ Score ` + score + `
 }
 
 function minLife() {
+    console.log('yes')
     lifeCount--
     lifePoint = ` <p>
     life ` + lifeCount + `
@@ -110,7 +123,11 @@ function minLife() {
     document.getElementById("life").innerHTML = lifePoint;
     chickM.style.display = "block";
 }
-playAgain.addEventListener("click", function() {
-    game()
+// playAgain.addEventListener("click", function() {
+//     game()
 
-})
+// })
+}
+
+
+game()

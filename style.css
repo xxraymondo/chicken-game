@@ -120,7 +120,12 @@ body {
     position: absolute;
     top: 450px;
 }
-
+#score{
+    font-size: 2rem;
+}
+#life{
+    font-size: 2rem;
+}
 .main-text {
     font-size: 4.3rem;
     font-family: 'Poppins', sans-serif;
