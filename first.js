@@ -77,6 +77,7 @@ function game() {
             } else {
                 minLife()
                 endGame()
+                chickR.style.display = "block";
             }
         }
         
@@ -89,6 +90,7 @@ function game() {
             } else {
                 minLife()
                 endGame()
+                chickM.style.display = "block";
             }
         }
 
@@ -100,7 +102,7 @@ function game() {
                 addScore()
             } else {
                 minLife()
-                 endGame()
+                 endGame()chickL.style.display = "block";
             }
         }
     },100 )
