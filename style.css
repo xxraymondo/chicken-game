@@ -81,7 +81,7 @@ body {
         top: 50px;
     }
     100% {
-        top: 490px;
+        top: 550px;
     }
 }
 
@@ -118,7 +118,8 @@ body {
 .chick {
     width: 50%;
     position: absolute;
-    top: 450px;
+    top: 520px;
+    left:65px;
 }
 #score{
     font-size: 2rem;
